@@ -15,6 +15,6 @@
         <h1>Sistema de turnos para incidencias</h1>
         <a href="agregar_ciudadano.jsp">Agregar ciudadano</a>
         <a href="agregar_turno.jsp">Agregar turno</a>
-        <a href="listar_turnos.jsp">Ver Listado de Turnos</a>
+        <a href="listar_turnos.jsp" name="action" value="mostrarTurnos">Ver Listado de Turnos</a>
     </body>
 </html>

@@ -15,9 +15,25 @@
     </head>
     <body>
         <h1>Listado de turnos</h1>
+        <form action="SvTurno" method="GET">
+        <div class="form-group">
+            <label for="fecha_turno">Fecha:</label>
+            <input type="date" class="form-control" id="fecha_turno" name="fecha_turno">
+        </div>
+        <div>
+            <label>
+                <input type="radio" name="opcion" value="en_espera" checked>
+                En espera
+            </label>
+
+            <label>
+                <input type="radio" name="opcion" value="ya_atendido">
+                Ya atendido
+            </label>
+        </div>
         <div class="container">
             <h2>Listado de Turnos</h2>
-            <form action="SvTurno" method="GET">
+            
                 <button type="submit" name="action" value="mostrarTurnos">Mostrar turnos</button>
                 <% if (request.getAttribute("listaTurnos") != null) { %>
                 <table class="table">
@@ -28,6 +44,7 @@
                             <th>Descripción de Incidencia</th>
                             <th>Fecha</th>
                             <th>Nombre Ciudadano</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +54,8 @@
                             <td><%= turno.getNumero()%></td>
                             <td><%= turno.getDescTramite()%></td>
                             <td><%= turno.getFechaTurno()%></td>
-                            <td><%= turno.getCiudadano()%>}</td>
+                            <td><%= turno.getCiudadano()%></td>
+                            <td><%= turno.getEstado()%></td>
                         </tr>
                         <% } %>
                     </tbody>

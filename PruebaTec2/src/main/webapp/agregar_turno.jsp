@@ -15,7 +15,7 @@
         <div class="container">
             <h2>Turno de incidencia para <%= request.getAttribute("nombreCiudadano") %></h2>
             <form action="SvTurno" method="POST">
-                <input type="hidden" name="ciudadano" value="<%= request.getAttribute("ciudadanoId") %>" />
+                <input type="text" name="ciudadano" value="<%= request.getAttribute("ciudadanoId") %>" />
                 <div class="form-group">
                     <label for="numero_turno">Número de Turno:</label>
                     <input type="text" class="form-control" id="numero_turno" name="numero_turno" required>

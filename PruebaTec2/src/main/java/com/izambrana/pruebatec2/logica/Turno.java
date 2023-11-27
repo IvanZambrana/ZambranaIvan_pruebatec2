@@ -1,6 +1,7 @@
 package com.izambrana.pruebatec2.logica;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,20 +23,24 @@ public class Turno implements Serializable {
     private int id;
     private int numero;
     private String descTramite;
+    private LocalDate fechaTurno;
+    private String estado;
     
     @ManyToOne
     @JoinColumn(name = "ciudadano_id")
     private Ciudadano ciudadano;
-    private Date fechaTurno;
+    
     
     //Constructores
     public Turno() {
     }
 
-    public Turno(int numero, String descTramite, Ciudadano ciudadano) {
+    public Turno(int numero, String descTramite, Ciudadano ciudadano, LocalDate fechaTurno) {
         this.numero = numero;
         this.descTramite = descTramite;
         this.ciudadano = ciudadano;
+        this.fechaTurno = fechaTurno;
+        this.estado = "En espera";
     }
     
     //Getters y Setters
@@ -63,12 +68,20 @@ public class Turno implements Serializable {
         this.ciudadano = ciudadano;
     }
 
-    public Date getFechaTurno() {
+    public LocalDate getFechaTurno() {
         return fechaTurno;
     }
 
-    public void setFechaTurno(Date fechaTurno) {
+    public void setFechaTurno(LocalDate fechaTurno) {
         this.fechaTurno = fechaTurno;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public int getId() {
