@@ -38,10 +38,7 @@ public class SvCiudadano extends HttpServlet {
         String dni = request.getParameter("dni_ciudadano");
         String numTelefono = request.getParameter("telefono_ciudadano");
 
-        //Crear un nuevo objeto Ciudadano
         Ciudadano ciudadano = new Ciudadano();
-
-        //Añadir atributos
         ciudadano.setNombre(nombre);
         ciudadano.setApellidos(apellido);
         ciudadano.setDni(dni);
@@ -50,13 +47,12 @@ public class SvCiudadano extends HttpServlet {
         //Se persiste el equipo en la BD
         control.crearCiudadano(ciudadano);
 
-        // Guardar el nombre del ciudadano como un atributo de solicitud
         request.setAttribute("nombreCiudadano", nombre);
-        // Guardar el ID del ciudadano como un atributo de solicitud
+        request.setAttribute("apellidoCiudadano", apellido);
         request.setAttribute("ciudadanoId", ciudadano.getId());
 
-        // Redirigir a la página de agregar_turno
-        request.getRequestDispatcher("agregar_turno.jsp").forward(request, response);
+        // Redirigir a la página de agregar_turno con el parámetro en la URL
+        response.sendRedirect("agregar_turno.jsp?ciudadanoId=" + ciudadano.getId());
     }
 
     @Override

@@ -8,33 +8,34 @@
 <%@page import="com.izambrana.pruebatec2.logica.Turno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
         <title>Lista de turnos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     </head>
     <body>
         <h1>Listado de turnos</h1>
         <form action="SvTurno" method="GET">
-        <div class="form-group">
-            <label for="fecha_turno">Fecha:</label>
-            <input type="date" class="form-control" id="fecha_turno" name="fecha_turno">
-        </div>
-        <div>
-            <label>
-                <input type="radio" name="opcion" value="en_espera" checked>
-                En espera
-            </label>
+            <div class="form-group">
+                <label for="fecha_turno">Fecha:</label>
+                <input type="date" class="form-control" id="fecha_turno" name="fecha_turno" required
+                       value="<%= request.getParameter("fecha_turno")%>">
+            </div>
+            <div>
+                <label>
+                    <input type="radio" name="opcion" value="en_espera">
+                    En espera
+                </label>
 
-            <label>
-                <input type="radio" name="opcion" value="ya_atendido">
-                Ya atendido
-            </label>
-        </div>
-        <div class="container">
-            <h2>Listado de Turnos</h2>
-            
+                <label>
+                    <input type="radio" name="opcion" value="ya_atendido">
+                    Ya atendido
+                </label>
+            </div>
+            <div class="container">
                 <button type="submit" name="action" value="mostrarTurnos">Mostrar turnos</button>
+                <a href="index.jsp">Volver a página principal</a>
                 <% if (request.getAttribute("listaTurnos") != null) { %>
                 <table class="table">
                     <thead>
@@ -56,12 +57,21 @@
                             <td><%= turno.getFechaTurno()%></td>
                             <td><%= turno.getCiudadano()%></td>
                             <td><%= turno.getEstado()%></td>
+                            <td>
+                            <td>
+                                <a href="SvTurno?action=cambiarEstado&idTurno=<%= turno.getId()%>" 
+                                   onclick="return confirm('¿Deseas solucionar esta incidencia?')"
+                                   <% if ("Ya atendido".equals(turno.getEstado())) { %>style="display:none;"<% } %>
+                                   >
+                                    Solucionar Incidencia
+                                </a>
+                            </td>
                         </tr>
                         <% } %>
                     </tbody>
                 </table>
                 <% }%>
-            </form>
-        </div>
-    </body>
+        </form>
+    </div>
+</body>
 </html>

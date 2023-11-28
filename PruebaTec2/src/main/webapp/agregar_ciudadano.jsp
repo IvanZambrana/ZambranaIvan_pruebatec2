@@ -4,12 +4,13 @@
     Author     : Ivan
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="UTF-8">
+        <title>Agregar Ciudadano</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     </head>
     <body>
         <h3>Datos del Ciudadano</h3>
@@ -23,10 +24,12 @@
             <label for="dni_ciudadano">DNI:</label>
             <input type="text" class="form-control" id="dni_ciudadano" name="dni_ciudadano" required>
             <br>
-            <label for="telefono_ciudadano">Telefono:</label>
+            <label for="telefono_ciudadano">Teléfono:</label>
             <input type="text" class="form-control" id="telefono_ciudadano" name="telefono_ciudadano" required>
             <br>
-            <button type="submit"> Agregar ciudadano</button>
+            <button type="submit" onclick="return confirm('¿Son correctos los datos del ciudadano?')"> Agregar ciudadano</button>
         </form>
+        <a href="index.jsp">Volver a página principal</a>
+
     </body>
 </html>
