@@ -6,14 +6,21 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gestion de turnos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestión de Turnos</title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <h1>Sistema de turnos para incidencias</h1>
-        <a href="agregar_ciudadano.jsp">Agregar ciudadano para un nuevo turno</a>
-        <a href="listar_turnos.jsp" name="action" value="mostrarTurnos">Ver Listado de Turnos</a>
+        <header>
+            <h1>Sistema de Turnos para Incidencias</h1>
+        </header>
+        <div class="container">
+            <p class="pagina-explicacion">Bienvenido a nuestra página de gestión de incidencias. <br>
+             Aquí puedes <a href="agregar_ciudadano.jsp">agregar un ciudadano para abrir turnos</a> y también <a href="listar_turnos.jsp" name="action" value="mostrarTurnos">ver la lista de turnos existentes</a>.</p>
+
+        </div>
     </body>
 </html>

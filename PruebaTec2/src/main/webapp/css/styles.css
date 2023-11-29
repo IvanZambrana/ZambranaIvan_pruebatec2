@@ -1,0 +1,122 @@
+/* 
+    Created on : 29-nov-2023, 12:29:38
+    Author     : Ivan
+*/
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #1e1f1f;
+    padding: 10px;
+    color: #fff;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+h2 {
+    color: #555;
+    margin-left: 15px;
+}
+
+h3 {
+    color: #777;
+}
+
+/*Index*/
+.pagina-explicacion {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 10%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+#descripcion {
+    height: 150px;
+    width: 500px;
+}
+
+button {
+    background-color: #0364a8;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Tabla */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #f2f2f2;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+}
+
+.custom-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.custom-table tr:hover {
+    background-color: #e5e5e5;
+}
+
+/* Enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

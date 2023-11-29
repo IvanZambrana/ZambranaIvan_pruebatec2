@@ -13,31 +13,36 @@
         <meta charset="UTF-8">
         <title>Lista de turnos</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <h1>Listado de turnos</h1>
+        <h2>Listado de turnos</h2>
         <form action="SvTurno" method="GET">
             <div class="form-group">
                 <label for="fecha_turno">Fecha:</label>
                 <input type="date" class="form-control" id="fecha_turno" name="fecha_turno" required
                        value="<%= request.getParameter("fecha_turno")%>">
-            </div>
-            <div>
-                <label>
-                    <input type="radio" name="opcion" value="en_espera">
-                    En espera
-                </label>
 
-                <label>
-                    <input type="radio" name="opcion" value="ya_atendido">
-                    Ya atendido
-                </label>
+                <div>
+                    <label>
+                        <input type="radio" name="opcion" value="en_espera">
+                        En espera
+                    </label>
+
+                    <label>
+                        <input type="radio" name="opcion" value="ya_atendido">
+                        Ya atendido
+                    </label>
+                    <br><br>
+                    <button type="submit" name="action" value="mostrarTurnos">Mostrar turnos</button>
+                    <br>
+                    <a href="index.jsp">Volver a página principal</a>
+                </div>
             </div>
             <div class="container">
-                <button type="submit" name="action" value="mostrarTurnos">Mostrar turnos</button>
-                <a href="index.jsp">Volver a página principal</a>
+
                 <% if (request.getAttribute("listaTurnos") != null) { %>
-                <table class="table">
+                <table class="custom-table">
                     <thead>
                         <tr>
                             <th>ID Turno</th>
@@ -57,7 +62,6 @@
                             <td><%= turno.getFechaTurno()%></td>
                             <td><%= turno.getCiudadano()%></td>
                             <td><%= turno.getEstado()%></td>
-                            <td>
                             <td>
                                 <a href="SvTurno?action=cambiarEstado&idTurno=<%= turno.getId()%>" 
                                    onclick="return confirm('¿Deseas solucionar esta incidencia?')"

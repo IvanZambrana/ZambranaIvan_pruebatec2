@@ -6,13 +6,14 @@
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="com.izambrana.pruebatec2.logica.Controladora" %>
 <%@ page import="com.izambrana.pruebatec2.logica.Ciudadano" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"  language="java"%>
+<%@page contentType="text/html charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Reportar Incidencia</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <%

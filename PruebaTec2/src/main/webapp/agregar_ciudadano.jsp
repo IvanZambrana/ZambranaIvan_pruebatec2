@@ -11,9 +11,11 @@
         <meta charset="UTF-8">
         <title>Agregar Ciudadano</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <h3>Datos del Ciudadano</h3>
+        <h2>Datos del Ciudadano</h2>
+        <div  class="form-group">
         <form action="SvCiudadano" method="POST">
             <label for="nombre_ciudadano">Nombre:</label>
             <input type="text" class="form-control" id="nombre_ciudadano" name="nombre_ciudadano" required>
@@ -26,10 +28,10 @@
             <br>
             <label for="telefono_ciudadano">Teléfono:</label>
             <input type="text" class="form-control" id="telefono_ciudadano" name="telefono_ciudadano" required>
-            <br>
+            <br><br>
             <button type="submit" onclick="return confirm('¿Son correctos los datos del ciudadano?')"> Agregar ciudadano</button>
         </form>
         <a href="index.jsp">Volver a página principal</a>
-
+        </div>
     </body>
 </html>
